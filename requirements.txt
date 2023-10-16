@@ -4,5 +4,5 @@ protobuf
 pydantic
 google
 uvicorn
-
+google-generativeai
 
