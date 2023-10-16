@@ -2,4 +2,5 @@ fastapi
 protobuf
 pydantic
 google-generativeai
+uvicorn
 
