@@ -3,5 +3,5 @@ protobuf
 pydantic
 google
 uvicorn
-google-generativeai
+google-generativeai==0.2.1
 
