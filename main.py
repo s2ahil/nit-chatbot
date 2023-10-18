@@ -2,6 +2,8 @@ from fastapi import FastAPI, Form, Body
 from pydantic import BaseModel
 import google.generativeai as palm
 from typing import Annotated
+
+from fastapi.middleware.cors import CORSMiddleware
 # Configure the Palm library with your API key
 palm.configure(api_key='AIzaSyA-LiZDpliZS0DWEbluHyJTbJ28XPb1d1A')
 
