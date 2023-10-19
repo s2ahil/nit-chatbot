@@ -38,6 +38,22 @@ def generate_text(request_data:Annotated[str, Form()]):
 
     return {"generated_text": completion.result}
 
+class Input(BaseModel):
+    request_data: str
+
+
+@app.post("/json")
+def generate_text1(request_data:Input):
+    print(request_data)
+    p = request_data
+    completion = palm.generate_text(
+        model=model,
+        prompt=p,
+        temperature=0,
+        max_output_tokens=200,
+    )
+
+    return {"generated_text": completion.result}
 
 # You can run this FastAPI application using Uvicorn:
 # uvicorn your_module_name:app --host 0.0.0.0 --port 8000
