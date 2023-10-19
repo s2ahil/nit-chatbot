@@ -45,7 +45,7 @@ class Input(BaseModel):
 @app.post("/json")
 def generate_text1(request_data:Input):
     print(request_data)
-    p = request_data
+    p = request_data.request_data
     completion = palm.generate_text(
         model=model,
         prompt=p,
