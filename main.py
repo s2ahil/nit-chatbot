@@ -50,7 +50,7 @@ def generate_text1(request_data:Input):
         model=model,
         prompt=p,
         temperature=0,
-        max_output_tokens=200,
+        max_output_tokens=1000,
     )
 
     return {"generated_text": completion.result}
