@@ -6,4 +6,4 @@ google
 uvicorn
 google-generativeai
 python-multipart
-
+mtranslate
