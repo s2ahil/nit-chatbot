@@ -2,7 +2,7 @@ from fastapi import FastAPI, Form, Body
 from pydantic import BaseModel
 import google.generativeai as palm
 from typing import Annotated
-
+from mtranslate import translate
 from fastapi.middleware.cors import CORSMiddleware
 # Configure the Palm library with your API key
 palm.configure(api_key='AIzaSyA-LiZDpliZS0DWEbluHyJTbJ28XPb1d1A')
@@ -45,7 +45,9 @@ class Input(BaseModel):
 @app.post("/json")
 def generate_text1(request_data:Input):
     print(request_data)
-    p = request_data.request_data
+    prompt = request_data.request_data
+    p = translate(prompt, "en")
+    # p = request_data.request_data
     completion = palm.generate_text(
         model=model,
         prompt=p,
