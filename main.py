@@ -33,7 +33,7 @@ def generate_text(request_data:Annotated[str, Form()]):
         model=model,
         prompt=p,
         temperature=0,
-        max_output_tokens=200,
+        max_output_tokens=1000,
     )
 
     return {"generated_text": completion.result}
