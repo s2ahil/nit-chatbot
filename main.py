@@ -48,14 +48,20 @@ def generate_text1(request_data:Input):
     prompt = request_data.request_data
     p = translate(prompt, "en")
     # p = request_data.request_data
+    
     completion = palm.generate_text(
         model=model,
         prompt=p,
         temperature=0,
         max_output_tokens=1000,
     )
+    # Set your English text
+    english_text = completion.result
 
-    return {"generated_text": completion.result}
+# Translate the English text to Hindi
+    hindi_translation = translate(english_text, "hi")
+
+    return {"generated_text": completion.result,"hindi_translation": hindi_translation}
 
 # You can run this FastAPI application using Uvicorn:
 # uvicorn your_module_name:app --host 0.0.0.0 --port 8000
