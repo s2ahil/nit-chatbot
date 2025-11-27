@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import google.generativeai as genai
 
 # Configure the GenAI library with your API key
-genai.configure(api_key="AIzaSyDhTRJ_zRBJiuy0X2BsQYXMA9gOmEtNUXY")
+genai.configure(api_key="AIzaSyA7_y475gmB7AtWyRi-h_AOSXr1AY6gCXg")
 model = genai.GenerativeModel("gemini-2.5-flash")
 
 app = FastAPI()
@@ -55,4 +55,5 @@ def generate_text_with_translation(request_data: Input):
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error processing request: {str(e)}")
+
 
