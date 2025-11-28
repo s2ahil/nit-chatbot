@@ -7,3 +7,5 @@ uvicorn
 google-generativeai
 python-multipart
 mtranslate
+dotenv
+
